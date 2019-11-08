@@ -13,6 +13,7 @@ class CustomerDetailsViewController: UIViewController, UITableViewDelegate,UITab
 
     var custTemp : Customer? = nil
     
+    @IBOutlet weak var totalBill: UITextField!
     @IBOutlet weak var billTable: UITableView!
     @IBOutlet weak var custFName: UITextField!
     @IBOutlet weak var custEmail: UITextField!
@@ -43,6 +44,8 @@ class CustomerDetailsViewController: UIViewController, UITableViewDelegate,UITab
             custEmail.text = custTemp?.customerEmail
             if let id = custTemp?.customerID {
                 custId.text = "\(id)"
+                totalBill.text = custTemp!.calcTotal().currFormat()
+                
             }
         }
 
@@ -69,22 +72,19 @@ class CustomerDetailsViewController: UIViewController, UITableViewDelegate,UITab
         {
             let tempObj =  tempArray[indexPath.row] as! Mobile
             cell.billType.text = tempBillType
-            cell.billDate.text = tempObj.billDate
-            cell.billAmount.text = String(tempObj.totalBillAmount)
+            cell.billAmount.text = String(tempObj.totalBillAmount.currFormat())
         }
         if tempBillType.elementsEqual("Internet")
         {
             let tempObj =  tempArray[indexPath.row] as! Internet
             cell.billType.text = tempBillType
-            cell.billDate.text = tempObj.billDate
-            cell.billAmount.text = String(tempObj.totalBillAmount)
+            cell.billAmount.text = String(tempObj.totalBillAmount.currFormat())
         }
         if tempBillType.elementsEqual("Hydro")
         {
             let tempObj =  tempArray[indexPath.row] as! Hydro
             cell.billType.text = tempBillType
-            cell.billDate.text = tempObj.billDate
-            cell.billAmount.text = String(tempObj.totalBillAmount)
+            cell.billAmount.text = String(tempObj.totalBillAmount.currFormat())
         }
         
         //cell.billType.text =  tempArray[indexPath.row].billType.rawValue
@@ -95,7 +95,7 @@ class CustomerDetailsViewController: UIViewController, UITableViewDelegate,UITab
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 134
+        return 100
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

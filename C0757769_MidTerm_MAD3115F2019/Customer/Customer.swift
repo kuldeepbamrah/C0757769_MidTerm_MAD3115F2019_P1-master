@@ -41,5 +41,18 @@ class Customer
         }
         return temp
     }
+    func calcTotal() -> Float
+    {
+        var sum: Float = 0.0
+        
+        for j in billDictionary.values
+        {
+            sum += j.totalBillAmount
+            
+            
+        }
+        return sum
+    }
+    
     
 }

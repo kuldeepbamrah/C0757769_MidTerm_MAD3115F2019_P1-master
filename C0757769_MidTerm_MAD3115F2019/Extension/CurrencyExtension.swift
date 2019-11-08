@@ -11,6 +11,6 @@ extension Float {
     func currFormat() ->String
     {
         // return "$\(self).00"
-        return String(format: "$%0.2f", Float(self))
+        return String(format: "$ %0.2f", Float(self))
 }
 }

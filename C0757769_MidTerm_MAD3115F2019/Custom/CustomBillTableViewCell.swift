@@ -15,7 +15,7 @@ class CustomBillTableViewCell: UITableViewCell {
     
     
     
-    @IBOutlet weak var billDate: UILabel!
+  
     @IBOutlet weak var billType: UILabel!
     @IBOutlet weak var billAmount: UILabel!
     

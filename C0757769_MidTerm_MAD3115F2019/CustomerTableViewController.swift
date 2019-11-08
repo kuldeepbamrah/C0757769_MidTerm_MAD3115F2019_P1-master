@@ -68,7 +68,7 @@ class CustomerTableViewController: UIViewController , UITableViewDelegate, UITab
         
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 134
+        return 100
     }
     
     /*
