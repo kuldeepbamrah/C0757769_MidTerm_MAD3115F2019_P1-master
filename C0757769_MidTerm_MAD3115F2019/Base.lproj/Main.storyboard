@@ -36,7 +36,6 @@
                                 <state key="normal" title="Log In"/>
                                 <connections>
                                     <action selector="LogIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qQH-Km-uxv"/>
-                                    <segue destination="ST1-Kz-2yv" kind="show" id="698-pB-gc3"/>
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bnt-Yr-IDh">
@@ -265,7 +264,7 @@
                                 <action selector="logOutBtn:" destination="ST1-Kz-2yv" id="irn-Lo-Qnp"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="Ld1-L2-GuG">
+                        <barButtonItem key="rightBarButtonItem" title=" Add Customer" id="Ld1-L2-GuG">
                             <color key="tintColor" red="0.55596005920000002" green="0.86221116779999996" blue="0.2360286415" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="addCustomer:" destination="ST1-Kz-2yv" id="24F-nD-kpL"/>
@@ -461,7 +460,7 @@
                         <viewLayoutGuide key="safeArea" id="2Aw-IH-9y1"/>
                     </view>
                     <navigationItem key="navigationItem" title="Customer Details" id="50h-0Z-coN">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="svJ-Eu-jRN">
+                        <barButtonItem key="rightBarButtonItem" title="Add Bill" id="svJ-Eu-jRN">
                             <connections>
                                 <action selector="addNewBill:" destination="LLN-K3-JM4" id="dgg-OW-SME"/>
                             </connections>
@@ -585,14 +584,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVV-DB-MEe">
-                                <rect key="frame" x="184" y="598" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="saveBill:" destination="Q26-HM-VRK" eventType="touchUpInside" id="2Uv-ws-Te4"/>
-                                </connections>
-                            </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vC-bc-v1j">
                                 <rect key="frame" x="20" y="415" width="175" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -636,7 +627,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="uzI-xf-pUB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add New Bill" id="Yif-G9-4TG"/>
+                    <navigationItem key="navigationItem" title="Add New Bill" id="Yif-G9-4TG">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="oYp-RA-K1x">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TVV-DB-MEe">
+                                <rect key="frame" x="360" y="7" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveBill:" destination="Q26-HM-VRK" eventType="touchUpInside" id="2Uv-ws-Te4"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="billAmount" destination="eiR-I5-Mha" id="MqT-OV-atz"/>

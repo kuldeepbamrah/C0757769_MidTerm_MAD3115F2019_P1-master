@@ -46,62 +46,53 @@ class ViewController: UIViewController {
     
     @IBAction func LogIn(_ sender: UIButton)
     {
-        let emailtemp = emailField.text!
-        if emailtemp.hasSuffix("@gmail.com")
-        {
-            let pass = passField.text!
-            let email = emailField.text!
-            if email == "kuldeep@gmail.com"
+        if readInformationPlist()
             {
-                if pass == "1234"
-                {
-                    print("login Success")
-                    if rememebrMeBtn.isOn
-                    {
-                        let email1 = emailField.text!
-                        let passtemp1 = passField.text!
-                        UserDefaults.standard.set(email1, forKey: "email")
-                        UserDefaults.standard.set(passtemp1, forKey: "pass")
-                    }else
-                    {
-                        UserDefaults.standard.removeObject(forKey: "email")
-                        UserDefaults.standard.removeObject(forKey: "pass")
-                    }
+                if self.rememebrMeBtn.isOn{
                     
-                    
-                    
+                    UserDefaults.standard.set(emailField.text, forKey: "email")
+                    UserDefaults.standard.set(passField.text, forKey: "pass")
                 }else{
-                    let alert = UIAlertController(title: "Incorrect Password", message: "Password You have entered is Incorrect", preferredStyle: .alert)
-                    
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                    alert.addAction(UIAlertAction(title: "Ignore", style: .destructive, handler: nil))
-                    
-                    self.present(alert, animated: true)
-                }
-            }else{
-                let alert = UIAlertController(title: "Email Error", message: "Email not found.", preferredStyle: .alert)
+                     
+                    UserDefaults.standard.removeObject(forKey: "userName")
+                    UserDefaults.standard.removeObject(forKey: "userPassword")
+                    }
                 
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                alert.addAction(UIAlertAction(title: "Ignore", style: .destructive, handler: nil))
+                let sb=UIStoryboard(name: "Main", bundle: nil)
+                let customerVC = sb.instantiateViewController(withIdentifier: "TableVC") as! CustomerTableViewController
+                       navigationController?.pushViewController(customerVC, animated: true)
+        }
+            else{
+                let alert = UIAlertController(title: "Invalid Username Or Password", message: "Please Enter Valid username or password", preferredStyle: .alert)
+
+                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
                 
                 self.present(alert, animated: true)
             }
-            
-            
-        } else{
-            let alert = UIAlertController(title: "Email Error", message: "Please enter a valid email", preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            alert.addAction(UIAlertAction(title: "Ignore", style: .destructive, handler: nil))
-            
-            self.present(alert, animated: true)
-            
-        }
     }
     
+    func readInformationPlist() -> Bool{
+    if let bundlePath = Bundle.main.path(forResource: "Plist", ofType: "plist") {
+        let dictionary = NSMutableDictionary(contentsOfFile: bundlePath)
+
+         let usersList = dictionary!["users"] as! NSArray
+     
+         for u in usersList
+         {
+              let user = u as! NSDictionary
+             let uname = user["uname"]! as! String
+             let pwd = user["pwd"]! as! String
+             if uname==emailField.text! && pwd==passField.text!
+             {
+                 return true
+             }
+         }
+     
+    
+        }
+         return false
+    }
     
     
 }

@@ -34,6 +34,7 @@
 		E00331F12375D82900561AD2 /* CurrencyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00331F02375D82900561AD2 /* CurrencyExtension.swift */; };
 		E00331F32375D85700561AD2 /* AddMinutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00331F22375D85700561AD2 /* AddMinutes.swift */; };
 		E00331F52375D86A00561AD2 /* MiscExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00331F42375D86A00561AD2 /* MiscExtensions.swift */; };
+		E00331F92375E9BD00561AD2 /* Plist.plist in Resources */ = {isa = PBXBuildFile; fileRef = E00331F82375E9BD00561AD2 /* Plist.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		E00331F02375D82900561AD2 /* CurrencyExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExtension.swift; sourceTree = "<group>"; };
 		E00331F22375D85700561AD2 /* AddMinutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMinutes.swift; sourceTree = "<group>"; };
 		E00331F42375D86A00561AD2 /* MiscExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscExtensions.swift; sourceTree = "<group>"; };
+		E00331F82375E9BD00561AD2 /* Plist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Plist.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 				9BA077F6236CA2DC0042DA79 /* Main.storyboard */,
 				9BA077F9236CA2DE0042DA79 /* Assets.xcassets */,
 				9BA077FB236CA2DE0042DA79 /* LaunchScreen.storyboard */,
+				E00331F82375E9BD00561AD2 /* Plist.plist */,
 				9BA077FE236CA2DE0042DA79 /* Info.plist */,
 				9BDB2EC7236CAF7800D33666 /* CustomerTableViewController.swift */,
 				9BDB2EC9236CB2BF00D33666 /* AddCustomerViewController.swift */,
@@ -330,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BA077FD236CA2DE0042DA79 /* LaunchScreen.storyboard in Resources */,
+				E00331F92375E9BD00561AD2 /* Plist.plist in Resources */,
 				9BA077FA236CA2DE0042DA79 /* Assets.xcassets in Resources */,
 				9BA077F8236CA2DC0042DA79 /* Main.storyboard in Resources */,
 			);

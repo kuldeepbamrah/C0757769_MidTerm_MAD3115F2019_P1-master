@@ -41,7 +41,7 @@ class BillDetailsViewController: UIViewController
         billId.text = String(tempBillObj!.billId)
         billType.text = tempBillObj!.billType.rawValue
         billDate.text = tempBillObj?.billDate
-        billAmount.text = String(tempBillObj!.totalBillAmount)
+        billAmount.text = String(tempBillObj!.totalBillAmount.currFormat())
         
 
         
@@ -69,8 +69,8 @@ class BillDetailsViewController: UIViewController
             temp2.text = tempObj.planName
             temp3.text = tempObj.model
             temp4.text = tempObj.mobileNumber
-            temp5.text = String(tempObj.minutes)
-            temp6.text = String(tempObj.internetUsage)
+            temp5.text = String(tempObj.minutes.addMinutes())
+            temp6.text = String(tempObj.internetUsage.insertGB())
             
             
         }
@@ -80,7 +80,7 @@ class BillDetailsViewController: UIViewController
             tempLabel1.text = "Provider"
             tempLabel2.text = "GB Used"
             temp1.text = tempObj.providerName
-            temp2.text = String(tempObj.dataConsumed)
+            temp2.text = String(tempObj.dataConsumed.insertGB())
            
         }
         if tempBill.elementsEqual("Hydro")
@@ -89,7 +89,7 @@ class BillDetailsViewController: UIViewController
             tempLabel1.text = "Agency"
             tempLabel2.text = "Units"
             temp1.text = tempObj.agencyName
-            temp2.text = String(tempObj.unitsConsumed)
+            temp2.text = String(tempObj.unitsConsumed.insertUnits())
             
         }
         

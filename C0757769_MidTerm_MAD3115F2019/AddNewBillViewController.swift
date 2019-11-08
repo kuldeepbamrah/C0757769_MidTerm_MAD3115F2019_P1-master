@@ -53,22 +53,52 @@ class AddNewBillViewController: UIViewController, UIPickerViewDelegate,UIPickerV
         let billdate = String(billDate.text!)
         let billamount = Float(billAmount.text!)
         
+        if (billid == nil || billtype == "" || billdate == "" || billamount! == 0.0)
+        {
+            let alert = UIAlertController(title: "Empty Field", message: "Please Fill all th details", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
+        }else{
         if billtype.elementsEqual("Internet")
         {
+            
             let providerName = tempField1.text
             let internetUsage = Float(tempField2.text!)
+                if (providerName != nil && internetUsage != nil)
+                {
             let ibill = Internet(providerName: providerName!, dataConsumed: internetUsage! , billId: billid!, billDate: billdate, billAmount: billamount!, billType: Bill.billTypes(rawValue: billtype)!)
             custObj?.addBill(Bill: ibill)
+            }else{
+                let alert = UIAlertController(title: "Empty Field", message: "Please Fill all th details", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                
+                self.present(alert, animated: true)
+            }
         }
         if billtype.elementsEqual("Hydro")
         {
+            
             let agencyName = tempField1.text
             let unitsConsumed = Float(tempField2.text!)
+            if (agencyName != nil && unitsConsumed != nil)
+            {
             let hbill = Hydro(agencyName: agencyName!, unitsConsumed: unitsConsumed!, billAmount: billamount!, billId: billid!, billType: Bill.billTypes(rawValue: billtype)!, billDate: billdate)
             custObj?.addBill(Bill: hbill)
-        }
+            }else{
+                let alert = UIAlertController(title: "Empty Field", message: "Please Fill all th details", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                
+                self.present(alert, animated: true)
+                
+            }
+            }
         if billtype.elementsEqual("Mobile")
         {
+            
             let planName = tempField1.text
             let mobileNumber = tempField2.text
             let model = tempfield3.text
@@ -76,13 +106,33 @@ class AddNewBillViewController: UIViewController, UIPickerViewDelegate,UIPickerV
             let internetUsage = Float(tempField5.text!)
             let minutes = Int(tempField6.text!)
             
+            
+            if(planName != nil && mobileNumber != nil && model != nil && manufacturer != nil && internetUsage != nil && minutes != nil){
             let mBill = Mobile(manufacturerName: manufacturer!, modelName: model!, planName: planName!, mobileNumber: mobileNumber!, internetUsed: internetUsage!, minutes: minutes!, billAmount: billamount!, billId: billid!, billType: Bill.billTypes(rawValue: billtype)!, billDate: billdate)
            
             custObj?.addBill(Bill: mBill)
+                
+                
+            }else{
+                let alert = UIAlertController(title: "Empty Field", message: "Please Fill all th details", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                
+                self.present(alert, animated: true)
+            }
         }
+            
         
         
       
+    }
+        
+        let alert = UIAlertController(title: "Bill Added", message: "Bill was Successfully Added.", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        navigationController?.popViewController(animated: true)
+        self.present(alert, animated: true)
+        
     }
     
     
