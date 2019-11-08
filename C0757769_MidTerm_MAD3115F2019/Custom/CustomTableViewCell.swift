@@ -10,8 +10,10 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
 
+
     
-    
+
+    @IBOutlet weak var custID: UILabel!
     @IBOutlet weak var custName: UILabel!
     @IBOutlet weak var custEmail: UILabel!
     override func awakeFromNib()

@@ -11,6 +11,8 @@ import UIKit
 class CustomerTableViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
     
  var temp1 = Singleton.getInstance()
+    
+    
     @IBOutlet weak var customerTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +45,8 @@ class CustomerTableViewController: UIViewController , UITableViewDelegate, UITab
         
         cell1.custName.text = t1?.customerFName
         cell1.custEmail.text = t1?.customerEmail
-        //cell.textLabel?.text = t1?.fullName
+        let y : Int = t1!.customerID!
+        cell1.custID.text = String(y)
         //cell.detailTextLabel?.text = t1?.customerEmail
         return cell1
         
