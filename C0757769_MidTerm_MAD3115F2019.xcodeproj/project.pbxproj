@@ -31,6 +31,9 @@
 		9BDB2EC8236CAF7800D33666 /* CustomerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDB2EC7236CAF7800D33666 /* CustomerTableViewController.swift */; };
 		9BDB2ECA236CB2BF00D33666 /* AddCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDB2EC9236CB2BF00D33666 /* AddCustomerViewController.swift */; };
 		9BDB2ECC236CBAC600D33666 /* CustomerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDB2ECB236CBAC600D33666 /* CustomerDetailsViewController.swift */; };
+		E00331F12375D82900561AD2 /* CurrencyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00331F02375D82900561AD2 /* CurrencyExtension.swift */; };
+		E00331F32375D85700561AD2 /* AddMinutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00331F22375D85700561AD2 /* AddMinutes.swift */; };
+		E00331F52375D86A00561AD2 /* MiscExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00331F42375D86A00561AD2 /* MiscExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,9 @@
 		9BDB2EC7236CAF7800D33666 /* CustomerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerTableViewController.swift; sourceTree = "<group>"; };
 		9BDB2EC9236CB2BF00D33666 /* AddCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomerViewController.swift; sourceTree = "<group>"; };
 		9BDB2ECB236CBAC600D33666 /* CustomerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailsViewController.swift; sourceTree = "<group>"; };
+		E00331F02375D82900561AD2 /* CurrencyExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExtension.swift; sourceTree = "<group>"; };
+		E00331F22375D85700561AD2 /* AddMinutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMinutes.swift; sourceTree = "<group>"; };
+		E00331F42375D86A00561AD2 /* MiscExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +156,9 @@
 			isa = PBXGroup;
 			children = (
 				9B22DA9C236D10CE00CB2CB7 /* DateExtension.swift */,
+				E00331F02375D82900561AD2 /* CurrencyExtension.swift */,
+				E00331F22375D85700561AD2 /* AddMinutes.swift */,
+				E00331F42375D86A00561AD2 /* MiscExtensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -353,7 +362,9 @@
 				9B600A312374A1B9000D6AFD /* BillDetailsViewController.swift in Sources */,
 				9B6E6CA12372208800B23013 /* CustomBillTableViewCell.swift in Sources */,
 				9B600A332374A2F4000D6AFD /* HydroTableViewCell.swift in Sources */,
+				E00331F12375D82900561AD2 /* CurrencyExtension.swift in Sources */,
 				9BA07823236CAA610042DA79 /* SignUpViewController.swift in Sources */,
+				E00331F32375D85700561AD2 /* AddMinutes.swift in Sources */,
 				9BDB2ECA236CB2BF00D33666 /* AddCustomerViewController.swift in Sources */,
 				9B22DA94236D0C6C00CB2CB7 /* Mobile.swift in Sources */,
 				9BA077F5236CA2DC0042DA79 /* ViewController.swift in Sources */,
@@ -366,6 +377,7 @@
 				9BDB2EC4236CADD800D33666 /* Customer.swift in Sources */,
 				9B22DA96236D0C8B00CB2CB7 /* Internet.swift in Sources */,
 				9BDB2EC8236CAF7800D33666 /* CustomerTableViewController.swift in Sources */,
+				E00331F52375D86A00561AD2 /* MiscExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
