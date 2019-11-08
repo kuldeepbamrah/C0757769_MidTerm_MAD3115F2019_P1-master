@@ -17,11 +17,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let layer = CAGradientLayer()
-        layer.frame = view.bounds
-        layer.colors = [UIColor.yellow.cgColor,UIColor.red.cgColor]
-        layer.startPoint = CGPoint(x: 0,y: 0)
-        view.layer.insertSublayer(layer, at: 0)
+//        let layer = CAGradientLayer()
+//        layer.frame = view.bounds
+//        layer.colors = [UIColor.blue.cgColor,UIColor.red.cgColor]
+//        layer.startPoint = CGPoint(x: 0,y: 0)
+//        view.layer.insertSublayer(layer, at: 0)
 
 
         let gblData = Singleton.getInstance()
