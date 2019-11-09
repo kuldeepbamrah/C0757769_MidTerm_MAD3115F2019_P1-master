@@ -130,8 +130,9 @@ class AddNewBillViewController: UIViewController, UIPickerViewDelegate,UIPickerV
         let alert = UIAlertController(title: "Bill Added", message: "Bill was Successfully Added.", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        navigationController?.popViewController(animated: true)
+        
         self.present(alert, animated: true)
+        navigationController?.popViewController(animated: true)
         
     }
     
